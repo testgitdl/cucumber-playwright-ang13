@@ -1,0 +1,51 @@
+{
+  "name": "cucumber-playwright",
+  "version": "1.0.0",
+  "scripts": {
+    "video": "PWVIDEO=1 cucumber-js",
+    "format": "prettier --write \"**/*.{ts,tsx,css,html}\" ",
+    "only": "npm run cucumber -- --tags @only",
+    "steps-usage": "cucumber-js features/**/*.feature --dry-run",
+    "all": "cucumber-js features/**/*.feature",
+    "test-chrome": "cucumber-js",
+    "test-firefox": "SET BROWSER=firefox && cucumber-js",
+    "test:parallel": "cucumber-js --parallel=2",
+    "test-generate-report": "node src/support/reportHTML.js && node src/support/reportJUNIT.js"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "8.0.0-rc.3",
+    "@cucumber/html-formatter": "18.0.0",
+    "@cucumber/pretty-formatter": "1.0.0-alpha.2",
+    "@types/fs-extra": "9.0.13",
+    "cucumber-console-formatter": "1.0.0",
+    "cucumber-html-reporter": "5.5.0",
+    "expect": "27.5.1",
+    "playwright": "1.20.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/expect": "24.3.0",
+    "@types/lodash": "4.14.180",
+    "@types/node": "16.11.26",
+    "@typescript-eslint/eslint-plugin": "5.16.0",
+    "@typescript-eslint/parser": "5.16.0",
+    "allure-commandline": "^2.17.2",
+    "chai": "^4.3.6",
+    "cucumber-html-reporter": "^5.5.0",
+    "cucumber-junit-convert": "^2.1.1",
+    "cucumber-junit-formatter": "^0.2.2",
+    "cucumberjs-junitxml": "^1.0.0",
+    "e2e-api-playwright": "file://D:/cucumber-playwright-master/e2e-api-playwright-1.0.0.tgz",
+    "eslint": "8.12.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-prettier": "4.0.0",
+    "fs-extra": "10.0.1",
+    "open": "8.4.0",
+    "prettier": "2.6.1",
+    "rimraf": "3.0.2",
+    "standard-version": "9.3.2",
+    "ts-node": "^10.7.0",
+    "typescript": "4.6.3"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "debug-only",
+      "request": "launch",
+      "runtimeArgs": [
+        "./node_modules/@cucumber/cucumber/bin/cucumber-js",
+        "features/**/*.feature",
+        "--tags",
+        "@runMe"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node",
+      "env": {
+        "DEBUG": "pw:api",
+        "PWDEBUG": "1"
+      },
+      "console": "internalConsole",
+      "outputCapture": "std"
+    }
+  ]
+}
