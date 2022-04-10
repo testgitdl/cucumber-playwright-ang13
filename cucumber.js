@@ -1,25 +1,12 @@
-const common = `
-  --require-module ts-node/register
-  --require-module tsconfig-paths/register
-  --require src/**/*.ts
-  --require support/config.ts
-  --format json:reports/report.json 
-  --format html:reports/cucumber-html-report.html
-  --format summary 
-  --format progress-bar 
-  --format @cucumber/pretty-formatter
-  --format-options ${JSON.stringify({ snippetInterface: 'async-await' })}
-  --publish-quiet
-  `;
-
-const getWorldParams = () => {
-  const params = {
-    foo: 'bar',
-  };
-
-  return `--world-parameters ${JSON.stringify({ params })}`;
-};
-
-module.exports = {
-  default: `${common} ${getWorldParams()}`,
-};
+export default {
+    import: ['e2e/support/*.js', 'e2e/step_definitions/*.js'],
+    paths: ['e2e/features/*.feature'],
+    format: [
+        'json:reports/report.json',
+        'html:reports/cucumber-html-report.html',
+        'summary',
+        'progress - bar',
+        '@cucumber/pretty-formatter'
+    ],
+    publishQuiet: true
+}

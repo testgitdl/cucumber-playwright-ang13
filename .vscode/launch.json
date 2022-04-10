@@ -9,7 +9,7 @@
       "request": "launch",
       "runtimeArgs": [
         "./node_modules/@cucumber/cucumber/bin/cucumber-js",
-        "features/**/*.feature",
+        "e2e/features/**/*.feature",
         "--tags",
         "@runMe"
       ],
