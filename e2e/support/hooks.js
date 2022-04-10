@@ -47,19 +47,19 @@ AfterAll(async function () {
 
 // Create a new browser context and page per scenario
 Before(async function (scenario) {
-  // global.context = await global.browser.newContext();
-  // global.page = await global.context.newPage();
-  this.content = await global.browser.newContext();
-  this.page = await global.context.newPage();
+  global.context = await global.browser.newContext();
+  global.page = await global.context.newPage();
+  // this.content = await global.browser.newContext();
+  // this.page = await global.context.newPage();
   this.init(scenario);
 });
 
 // Cleanup after each scenario
 After(async function () {
-  // await global.page.close();
-  // await global.context.close();
-  await this.page.close();
-  await this.content.close();
+  await global.page.close();
+  await global.context.close();
+  // await this.page.close();
+  // await this.content.close();
 });
 
 After(async function (scenario) {
